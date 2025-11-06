@@ -5,6 +5,8 @@ import DefaultLayout from '../layouts/DefaultLayout.astro';
 
 import contentParagraph from '../components/content/contentParagraph.astro';
 import ContentH1 from '../components/content/contentH1.astro';
+import ContentH2 from '../components/content/contentH2.astro';
+import ContentH3 from '../components/content/contentH3.astro';
  
 interface Props {
   pagina: CollectionEntry<'paginas'>;
@@ -28,7 +30,7 @@ const { Content } = await render(pagina);
 <DefaultLayout title={pagina.data.title} >
 <section class="py-28 px-4">
       <div class="container mx-auto mb-20">
-        <Content components={{p: contentParagraph, h1: ContentH1}}/>
+        <Content components={{p: contentParagraph, h1: ContentH1, h2: ContentH2, h3: ContentH3}}/>
       </div>
 </section>
 

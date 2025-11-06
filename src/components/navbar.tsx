@@ -306,7 +306,7 @@ export default function ComplexNavbar(paginas: ComplexNavbarProps) {
         </a>
       </div>
       <Collapse open={isNavOpen} className="overflow-scroll">
-        <NavList allNavListItems={navListItems} />
+          <NavList allNavListItems={paginas.paginas} />
       </Collapse>
     </Navbar>
   );
