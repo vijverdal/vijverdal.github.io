@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+
+import contentParagraph from '../components/content/contentParagraph.astro';
+import ContentH1 from '../components/content/contentH1.astro';
+ 
+interface Props {
+  pagina: CollectionEntry<'paginas'>;
+}
+ 
+export async function getStaticPaths() {
+  const paginas = await getCollection('paginas');
+  const staticPaths = paginas.map((pagina) => ({
+    params: { slug: pagina.data.slug },
+    props: { pagina },
+  }));
+
+  return staticPaths;
+}
+
+const { pagina } = Astro.props;
+
+const { Content } = await render(pagina);
+---
+
+<DefaultLayout title={pagina.data.title} >
+<section class="py-28 px-4">
+      <div class="container mx-auto mb-20">
+        <Content components={{p: contentParagraph, h1: ContentH1}}/>
+      </div>
+</section>
+
+</DefaultLayout>

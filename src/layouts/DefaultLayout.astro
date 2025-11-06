@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header, { NavigationBar } from "../components/generic/navigation-bar"
+import Footer from "../components/generic/footer"
+import { getCollection } from 'astro:content';
+
+
+import Navigatie from '../../content/navigatie.json' assert { type: 'json' };
+
+export interface Props {
+  title: string;
+  metaDescription?: string;
+}
+
+const { title, metaDescription } = Astro.props;
+
+/*
+// 1. Haal alle blogposts op
+const allePaginas = await getCollection('paginas');
+
+// 2. Verzamel alle unieke tags
+const uniekePaginas = new Set<string>();
+allePaginas.forEach(pagina => {
+    uniekePaginas.add(pagina.data.type.toLowerCase()); // Zet om naar kleine letters voor consistentie
+});
+*/
+
+
+//const paginas = await getCollection('paginas');
+/*
+const staticPaths = paginas.map((pagina) => ({
+    label: pagina.data.title ,
+    url: pagina.data.slug ,
+}));
+*/
+/*
+const staticPaths = Navigatie.navigatie.map((item) => ({
+    label: item.label,
+    url: item.url,
+    links: item.links ? item.links.map((link) => ({
+        label: link.label,
+        url: link.url,
+    })) : undefined,
+}));
+*/
+
+
+// 3. Converteer naar een gesorteerde array
+//const paginas = Array.from(uniekePaginas).sort(); // Sorteer de tags alfabetisch
+
+
+---
+<Layout title={title}>
+  <div class="bg-primary-50 border-b border-accent">
+    <div class="container mx-auto px-4 py-4">
+      <NavigationBar client:only="react" paginas={Navigatie.navigatie} />
+    </div>
+    <main class="container mx-auto px-4 py-4">
+      <container class="pt-4 pb-4">
+        <slot />
+      </container>
+    </main>
+    <Footer client:only="react" />
+  </div>
+</Layout>

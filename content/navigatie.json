@@ -1,0 +1,54 @@
+{
+ "navigatie" : [
+  {
+    "label": "Welkom",
+    "url": "/"
+  },
+  {
+    "label": "Zalen",
+    "links": [
+      {
+        "label": "Accomodatie",
+        "url": "/accomodatie"
+      },
+      {
+        "label": "Evenementen",
+        "url": "/evenementen"
+      },
+      {
+        "label": "Foto's",
+        "url": "/fotos"
+      },
+      {
+        "label": "Ligging",
+        "url": "/ligging"
+      }
+    ]
+  },
+  {
+    "label": "Reserveren",
+    "links": [
+      {
+        "label": "Gebruiksprijzen",
+        "url": "/gebruiksprijzen"
+      },
+      {
+        "label": "Reglement",
+        "url": "/reglement"
+      },
+      {
+        "label": "Zaalkalenders",
+        "url": "/zaalkalenders"
+      },
+      {
+        "label": "Reservatie-aanvraag",
+        "url": "/reservatie"
+      }
+    ]
+  },
+  {
+    "label": "Contact",
+    "url": "/contact"
+  }
+]
+}
