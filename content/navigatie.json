@@ -5,6 +5,32 @@
     "url": "/"
   },
   {
+    "label": "Vijverdal",
+    "links": [
+      {
+        "label": "Kalender",
+        "url": "/accomodatie"
+      },
+      {
+        "label": "Prijzen",
+        "url": "/evenementen"
+      },
+    ]
+  },
+  {
+    "label": "Kerkeboomgaard",
+    "links": [
+      {
+        "label": "Kalender",
+        "url": "/accomodatie"
+      },
+      {
+        "label": "Prijzen",
+        "url": "/evenementen"
+      },
+    ]
+  }
+  {
     "label": "Zalen",
     "links": [
       {
